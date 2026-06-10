@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Friends of Isaac's Food Bank CIC — free community food pantry sheds in Redditch. No referral needed, no voucher required. Open 7 days a week, 365 days a year." />
+  <title>Friends of Isaac's Food Bank | Redditch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a href="/" class="header-logo" aria-label="Friends of Isaac's Food Bank — home">
+        <img src="assets/foi-logo.webp" alt="Friends of Isaac's Food Bank" height="48" />
+      </a>
+
+      <!-- Primary nav -->
+      <nav class="header-nav" id="header-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link nav-link--active">Home</a></li>
+          <li><a href="/our-story.html" class="nav-link">Our Story</a></li>
+          <li><a href="/get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="/find-a-shed.html" class="nav-link">Find a Shed</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+
+        <!-- Mobile-only CTA buttons inside dropdown -->
+        <div class="nav-mobile-ctas">
+          <a href="/contact.html?type=donate" class="btn btn--primary nav-mobile-btn">Donate Now</a>
+          <a href="/contact.html?type=help" class="btn btn--secondary-yellow nav-mobile-btn">Need Help?</a>
+        </div>
+      </nav>
+
+      <!-- Header actions (desktop) -->
+      <div class="header-actions">
+        <a href="/contact.html?type=help" class="btn btn--secondary-yellow header-cta header-cta--help">Need Help?</a>
+        <a href="/contact.html?type=donate" class="btn btn--primary header-cta">Donate Now</a>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">
+          <img src="assets/hamburger-menu.svg" alt="" aria-hidden="true" id="hamburger-icon" width="28" height="28" />
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-media">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/home-page-hero-v1.webp" />
+        <source media="(min-width: 769px)" srcset="assets/home-page-hero-v1.webp" />
+        <img
+          src="assets/home-page-hero-v1.webp"
+          alt="Isaac and the Friends of Isaac's Food Bank team"
+          class="hero-img"
+        />
+      </picture>
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Redditch &mdash; free for everyone</p>
+      <h1 class="hero-headline">No One Should<br />Go Hungry in Redditch</h1>
+      <p class="hero-sub">Take it if you need it, share if you have a spare. No referral. No voucher. No questions asked.</p>
+      <div class="hero-actions">
+        <a href="/contact.html?type=donate" class="btn btn--primary">Donate Now</a>
+        <a href="/contact.html?type=help" class="btn btn--secondary-yellow">Need Help?</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       IMPACT STRIP
+       ============================================================ -->
+  <section class="section impact-strip" aria-label="How you can help">
+    <div class="container">
+      <div class="impact-grid">
+
+        <div class="impact-card">
+          <div class="impact-icon">
+            <img src="assets/foi-warehouse-6.webp" alt="" class="impact-icon-img" />
+          </div>
+          <h2 class="impact-card-title">Donate</h2>
+          <p class="impact-card-text">Drop off food, toiletries, or baby items at any of our five sheds — or donate money to keep us stocked and running.</p>
+          <a href="/contact.html?type=donate" class="btn btn--outline impact-card-btn">Donate Now</a>
+        </div>
+
+        <div class="impact-card">
+          <div class="impact-icon">
+            <img src="assets/foi-team-image-2.webp" alt="" class="impact-icon-img" />
+          </div>
+          <h2 class="impact-card-title">Volunteer</h2>
+          <p class="impact-card-text">We run on the generosity of 10–15 volunteers. If you can give a few hours a week, we'd love to have you.</p>
+          <a href="/contact.html?type=volunteer" class="btn btn--outline impact-card-btn">Get Involved</a>
+        </div>
+
+        <div class="impact-card">
+          <div class="impact-icon">
+            <img src="assets/foi-isaac-support-1.webp" alt="" class="impact-icon-img" />
+          </div>
+          <h2 class="impact-card-title">Get Help</h2>
+          <p class="impact-card-text">Our sheds are open every day of the year. No appointment, no paperwork. Just visit your nearest shed and take what you need.</p>
+          <a href="/find-a-shed.html" class="btn btn--outline impact-card-btn">Find a Shed</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       OUR STORY (BRIEF)
+       ============================================================ -->
+  <section class="section section--alt story-brief" aria-label="Isaac's story">
+    <div class="container story-brief-inner">
+      <div class="story-brief-text">
+        <p class="section-label">Our Story</p>
+        <h2 class="heading-lg">Started with pocket money, built on community</h2>
+        <p class="subheading">In November 2020, a nine-year-old called Isaac set up a pop-up greenhouse on his family's driveway in Redditch. No funding. No backing. Just his own pocket money and a belief that no one should go hungry. Five years on, Friends of Isaac's Food Bank is a registered CIC with two vans, a warehouse, and five sheds serving around 300 families every week.</p>
+        <a href="/our-story.html" class="btn btn--outline" style="margin-top: 8px;">Read Isaac's Story</a>
+      </div>
+      <div class="story-brief-image">
+        <img src="assets/foi-isaac-award-1.webp" alt="Isaac receiving an award for his food bank work" class="story-img" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GET INVOLVED
+       ============================================================ -->
+  <section class="section get-involved" aria-label="Get involved">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Get Involved</p>
+        <h2 class="heading-md">There are lots of ways to help</h2>
+      </div>
+      <div class="get-involved-grid">
+
+        <div class="gi-card">
+          <div class="gi-card-img-wrap">
+            <img src="assets/foi-warehouse-2.webp" alt="Donations at the warehouse" class="gi-card-img" />
+          </div>
+          <div class="gi-card-body">
+            <h3 class="gi-card-title">Donate Money</h3>
+            <p class="gi-card-text">Every pound goes directly to keeping our sheds stocked. Donate via GoFundMe or our Amazon Wishlist.</p>
+            <a href="/contact.html?type=donate" class="btn btn--primary">Donate Now</a>
+          </div>
+        </div>
+
+        <div class="gi-card">
+          <div class="gi-card-img-wrap">
+            <img src="assets/foi-isaac-support-3.webp" alt="Food donations" class="gi-card-img" />
+          </div>
+          <div class="gi-card-body">
+            <h3 class="gi-card-title">Donate Food</h3>
+            <p class="gi-card-text">Drop tins, jars, breakfast items, toiletries, baby items, cleaning products, pet food, or period products at any shed.</p>
+            <a href="/find-a-shed.html" class="btn btn--primary">Find a Shed</a>
+          </div>
+        </div>
+
+        <div class="gi-card">
+          <div class="gi-card-img-wrap">
+            <img src="assets/foi-team-image-3.webp" alt="Volunteers at Friends of Isaac's Food Bank" class="gi-card-img" />
+          </div>
+          <div class="gi-card-body">
+            <h3 class="gi-card-title">Volunteer</h3>
+            <p class="gi-card-text">We're a small team making a big difference. Get in touch if you'd like to give your time.</p>
+            <a href="/contact.html?type=volunteer" class="btn btn--primary">Get in Touch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       DONATE STRIP
+       ============================================================ -->
+  <section class="donate-strip" aria-label="Make a donation">
+    <div class="container donate-strip-inner">
+      <div class="donate-strip-text">
+        <p class="section-label donate-strip-label">Support Us</p>
+        <h2 class="heading-md donate-strip-heading">Make a donation today</h2>
+        <p class="donate-strip-sub">Every pound helps us keep our sheds stocked and our doors open, 365 days a year.</p>
+      </div>
+      <div class="donate-strip-form">
+        <div class="donate-amounts">
+          <button class="donate-amount" data-amount="5">£5</button>
+          <button class="donate-amount" data-amount="10">£10</button>
+          <button class="donate-amount is-selected" data-amount="20">£20</button>
+          <button class="donate-amount" data-amount="50">£50</button>
+        </div>
+        <div class="donate-custom-wrap">
+          <label for="donate-custom" class="donate-custom-label">Or enter your own amount</label>
+          <div class="donate-input-wrap">
+            <span class="donate-pound" aria-hidden="true">£</span>
+            <input type="number" id="donate-custom" class="donate-input" placeholder="0.00" min="1" step="0.01" />
+          </div>
+        </div>
+        <div class="donate-actions">
+          <a href="#" class="btn btn--primary donate-now-main" id="donate-now">Donate Now</a>
+          <div class="donate-actions-secondary">
+            <a href="https://gofundme.com/f/friends-of-isaacs-food-bank" target="_blank" rel="noopener noreferrer" class="btn btn--outline donate-submit" id="donate-gofundme">Donate via GoFundMe</a>
+            <a href="https://www.amazon.co.uk/hz/wishlist/ls/SWV1YE7PH01U?ref_=wl_share" target="_blank" rel="noopener noreferrer" class="btn btn--outline donate-wishlist">Amazon Wishlist</a>
+          </div>
+        </div>
+        <p class="donate-note">Direct payment coming soon. GoFundMe accepted in the meantime.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FIND A SHED
+       ============================================================ -->
+  <section class="section find-shed" aria-label="Find a shed">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Find a Shed</p>
+        <h2 class="heading-md">Five locations across Redditch</h2>
+        <p class="subheading" style="max-width: 560px; margin: 12px auto 0;">All sheds are open 7 days a week, 365 days a year. No referral needed, no voucher required.</p>
+      </div>
+      <div class="shed-grid">
+
+        <div class="shed-card">
+          <div class="shed-card-tag">Isaac's Place</div>
+          <p class="shed-address">51 Throckmorton Road<br />Redditch</p>
+          <p class="shed-postcode">B98 7RP</p>
+        </div>
+
+        <div class="shed-card">
+          <div class="shed-card-tag">Samuel's Place</div>
+          <p class="shed-address">1 Batchley Road<br />Batchley, Redditch</p>
+          <p class="shed-postcode">B97 6HX</p>
+        </div>
+
+        <div class="shed-card">
+          <div class="shed-card-tag">Russell's Retreat</div>
+          <p class="shed-address">Abbeydale Social Club<br />Woodfield Close, Redditch</p>
+          <p class="shed-postcode">B98 8JE</p>
+        </div>
+
+        <div class="shed-card">
+          <div class="shed-card-tag">Frank's Shed</div>
+          <p class="shed-address">Antolin, Merse Road<br />Moons Moat North Ind. Estate</p>
+          <p class="shed-postcode">B98 9HL</p>
+        </div>
+
+        <div class="shed-card">
+          <div class="shed-card-tag">Willow Tree</div>
+          <p class="shed-address">Loxley Close<br />Church Hill, Redditch</p>
+          <p class="shed-postcode">B98 9JS</p>
+        </div>
+
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/find-a-shed.html" class="btn btn--outline">View All Locations</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SUPPORTERS
+       ============================================================ -->
+  <section class="section section--alt supporters" aria-label="Our supporters">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Our Supporters</p>
+        <h2 class="heading-md">We couldn't do this without them</h2>
+      </div>
+      <div class="supporters-marquee-wrap" aria-label="Our supporters list">
+        <div class="supporters-marquee" id="supporters-marquee">
+          <div class="supporters-track" aria-hidden="false">
+            <span class="supporter-name">Aldi</span>
+            <span class="supporter-name">Tesco</span>
+            <span class="supporter-name">Morrisons</span>
+            <span class="supporter-name">Co-op</span>
+            <span class="supporter-name">Amazon</span>
+            <span class="supporter-name">Jaguar Land Rover</span>
+            <span class="supporter-name">PepsiCo</span>
+            <span class="supporter-name">Persimmon Homes</span>
+            <span class="supporter-name">Redditch Round Table</span>
+            <span class="supporter-name">YMCA Worcestershire</span>
+            <span class="supporter-name">Redditch BID</span>
+            <span class="supporter-name">Redditch College</span>
+            <span class="supporter-name">Farm Foods</span>
+            <span class="supporter-name">Bargain Booze</span>
+            <span class="supporter-name">Antolin</span>
+            <span class="supporter-name">Arcus FM</span>
+            <span class="supporter-name">WEG</span>
+            <span class="supporter-name">Build Land</span>
+            <span class="supporter-name">McDonalds Redditch</span>
+          </div>
+          <!-- Duplicate track for seamless loop -->
+          <div class="supporters-track" aria-hidden="true">
+            <span class="supporter-name">Aldi</span>
+            <span class="supporter-name">Tesco</span>
+            <span class="supporter-name">Morrisons</span>
+            <span class="supporter-name">Co-op</span>
+            <span class="supporter-name">Amazon</span>
+            <span class="supporter-name">Jaguar Land Rover</span>
+            <span class="supporter-name">PepsiCo</span>
+            <span class="supporter-name">Persimmon Homes</span>
+            <span class="supporter-name">Redditch Round Table</span>
+            <span class="supporter-name">YMCA Worcestershire</span>
+            <span class="supporter-name">Redditch BID</span>
+            <span class="supporter-name">Redditch College</span>
+            <span class="supporter-name">Farm Foods</span>
+            <span class="supporter-name">Bargain Booze</span>
+            <span class="supporter-name">Antolin</span>
+            <span class="supporter-name">Arcus FM</span>
+            <span class="supporter-name">WEG</span>
+            <span class="supporter-name">Build Land</span>
+            <span class="supporter-name">McDonalds Redditch</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PRE-FOOTER CTA STRIPE
+       ============================================================ -->
+  <div class="prefooter-stripe">
+    <div class="container prefooter-inner">
+      <p class="prefooter-text">Need support or looking to donate? <a href="/contact.html" class="prefooter-link">Get in touch &rsaquo;</a></p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-tagline">Take it if you need it,<br />share if you have a spare</p>
+        <p class="footer-cic">Community Interest Company No. 14711585</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/FriendsofIsaacsFoodBank" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link">
+            <img src="assets/facebook.svg" alt="Facebook" width="18" height="18" />
+          </a>
+          <a href="https://www.amazon.co.uk/hz/wishlist/ls/SWV1YE7PH01U?ref_=wl_share" target="_blank" rel="noopener noreferrer" aria-label="Amazon Wishlist" class="footer-social-link">
+            <img src="assets/amazon.avif" alt="Amazon Wishlist" width="18" height="18" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <p class="footer-nav-heading">Navigate</p>
+        <ul>
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/our-story.html" class="footer-link">Our Story</a></li>
+          <li><a href="/get-involved.html" class="footer-link">Get Involved</a></li>
+          <li><a href="/find-a-shed.html" class="footer-link">Find a Shed</a></li>
+          <li><a href="/contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-nav-heading">Get in Touch</p>
+        <ul>
+          <li><a href="mailto:friendsofisaacs@hotmail.com" class="footer-link">friendsofisaacs@hotmail.com</a></li>
+          <li><a href="tel:07496381323" class="footer-link">07496 381323</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <div class="container footer-legal-inner">
+        <p>&copy; 2025 Friends of Isaac's Food Bank CIC. All rights reserved. &bull; Built by <a href="https://www.lemiyu.com" target="_blank" rel="noopener noreferrer" class="footer-legal-link">Lemiyu</a></p>
+        <ul class="footer-legal-links">
+          <li><a href="/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/cookie-policy.html" class="footer-link">Cookie Policy</a></li>
+          <li><a href="/accessibility.html" class="footer-link">Accessibility</a></li>
+          <li><a href="/terms.html" class="footer-link">Terms of Use</a></li>
+          <li><a href="/safeguarding.html" class="footer-link">Safeguarding</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const nav = document.getElementById('header-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      hamburgerIcon.src = isOpen ? 'assets/hamburger-close.svg' : 'assets/hamburger-menu.svg';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+        hamburger.setAttribute('aria-label', 'Open menu');
+        hamburgerIcon.src = 'assets/hamburger-menu.svg';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+        hamburger.setAttribute('aria-label', 'Open menu');
+        hamburgerIcon.src = 'assets/hamburger-menu.svg';
+        hamburger.focus();
+      }
+    });
+
+    // Sticky header shadow
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    });
+
+    // Donate amount selector
+    const amountBtns = document.querySelectorAll('.donate-amount');
+    const customInput = document.getElementById('donate-custom');
+
+    amountBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        amountBtns.forEach(b => b.classList.remove('is-selected'));
+        btn.classList.add('is-selected');
+        customInput.value = '';
+      });
+    });
+
+    customInput.addEventListener('input', () => {
+      amountBtns.forEach(b => b.classList.remove('is-selected'));
+    });
+  </script>
+
+</body>
+</html>

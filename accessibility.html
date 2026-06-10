@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Accessibility Statement for Friends of Isaac's Food Bank CIC. Our commitment to making this website accessible to everyone." />
+  <title>Accessibility Statement | Friends of Isaac's Food Bank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="legal.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="/" class="header-logo" aria-label="Friends of Isaac's Food Bank — home">
+        <img src="assets/foi-logo.webp" alt="Friends of Isaac's Food Bank" height="48" />
+      </a>
+
+      <nav class="header-nav" id="header-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/our-story.html" class="nav-link">Our Story</a></li>
+          <li><a href="/get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="/find-a-shed.html" class="nav-link">Find a Shed</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+        <div class="nav-mobile-ctas">
+          <a href="/contact.html?type=donate" class="btn btn--primary nav-mobile-btn">Donate Now</a>
+          <a href="/contact.html?type=help" class="btn btn--secondary-yellow nav-mobile-btn">Need Help?</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/contact.html?type=help" class="btn btn--secondary-yellow header-cta header-cta--help">Need Help?</a>
+        <a href="/contact.html?type=donate" class="btn btn--primary header-cta">Donate Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">
+          <img src="assets/hamburger-menu.svg" alt="" aria-hidden="true" id="hamburger-icon" width="28" height="28" />
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       PAGE HERO
+       ============================================================ -->
+  <section class="page-hero" aria-label="Accessibility Statement">
+    <div class="container page-hero-inner">
+      <p class="section-label">Legal</p>
+      <h1 class="heading-xl">Accessibility Statement</h1>
+      <p class="legal-meta">Last updated: January 2025 &bull; Friends of Isaac's Food Bank CIC &bull; Company No. 14711585</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTENT
+       ============================================================ -->
+  <section class="section legal-section">
+    <div class="container legal-layout">
+
+      <!-- Sidebar nav -->
+      <nav class="legal-nav" aria-label="Jump to section">
+        <p class="legal-nav-heading">On this page</p>
+        <ul>
+          <li><a href="#our-commitment" class="legal-nav-link">Our commitment</a></li>
+          <li><a href="#standards" class="legal-nav-link">Standards we aim for</a></li>
+          <li><a href="#measures" class="legal-nav-link">Measures we've taken</a></li>
+          <li><a href="#known-issues" class="legal-nav-link">Known issues</a></li>
+          <li><a href="#assistive-tech" class="legal-nav-link">Assistive technology</a></li>
+          <li><a href="#feedback" class="legal-nav-link">Feedback</a></li>
+          <li><a href="#enforcement" class="legal-nav-link">Enforcement</a></li>
+        </ul>
+      </nav>
+
+      <!-- Body -->
+      <div class="legal-body">
+
+        <section class="legal-block" id="our-commitment">
+          <h2 class="legal-h2">1. Our commitment</h2>
+          <p>Friends of Isaac's Food Bank CIC is committed to making this website accessible to as many people as possible, regardless of disability, assistive technology, or circumstance. We believe that everyone deserves equal access to information about our services — including those who may need help most.</p>
+          <p>This statement applies to the website at <strong>friendsofisaacs.co.uk</strong> (domain to be confirmed). It does not cover third-party websites or services we link to, such as GoFundMe, Facebook, or Amazon.</p>
+        </section>
+
+        <section class="legal-block" id="standards">
+          <h2 class="legal-h2">2. Standards we aim for</h2>
+          <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA. These guidelines explain how to make web content more accessible to people with disabilities, including those with visual, auditory, physical, speech, cognitive, language, learning, and neurological disabilities.</p>
+          <p>WCAG 2.1 AA is the standard referenced by the Public Sector Bodies Accessibility Regulations 2018. Whilst we are not legally required to comply as a small CIC, we use it as our benchmark because it represents good practice.</p>
+        </section>
+
+        <section class="legal-block" id="measures">
+          <h2 class="legal-h2">3. Measures we have taken</h2>
+          <p>In building this website, we have taken the following steps to support accessibility:</p>
+          <ul class="legal-list">
+            <li><strong>Semantic HTML</strong> — page structure uses appropriate heading levels, landmark regions (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>), and meaningful element types throughout.</li>
+            <li><strong>Keyboard navigation</strong> — all interactive elements including navigation, buttons, form fields, and links are reachable and operable using a keyboard alone.</li>
+            <li><strong>Focus indicators</strong> — visible focus styles are present on all interactive elements so keyboard users can track their position on the page.</li>
+            <li><strong>Colour contrast</strong> — text and interactive elements have been designed to meet or exceed the WCAG 2.1 AA minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text.</li>
+            <li><strong>Alternative text</strong> — all meaningful images include descriptive <code>alt</code> attributes. Decorative images use empty alt attributes so they are skipped by screen readers.</li>
+            <li><strong>Responsive design</strong> — the site is fully responsive and works at all viewport sizes, including when text is resized up to 200%.</li>
+            <li><strong>Reduced motion</strong> — animations and transitions respect the <code>prefers-reduced-motion</code> media query and are disabled for users who have requested this in their system settings.</li>
+            <li><strong>Form labels</strong> — all form inputs are associated with visible labels. Required fields are indicated both visually and programmatically.</li>
+            <li><strong>ARIA attributes</strong> — ARIA roles and attributes are used where HTML alone is insufficient to convey state or purpose, such as on the mobile navigation toggle.</li>
+            <li><strong>No content relying on colour alone</strong> — information is never conveyed by colour alone; shape, text, or icons are used alongside colour.</li>
+          </ul>
+        </section>
+
+        <section class="legal-block" id="known-issues">
+          <h2 class="legal-h2">4. Known issues</h2>
+          <p>We are not aware of any significant accessibility barriers on this website at the time of publication. However, as the site is actively developed and content is added, new issues may arise.</p>
+          <p>If you experience any difficulty accessing any part of this website, please let us know using the contact details in section 6 below. We take all feedback seriously and aim to resolve reported issues promptly.</p>
+        </section>
+
+        <section class="legal-block" id="assistive-tech">
+          <h2 class="legal-h2">5. Assistive technology compatibility</h2>
+          <p>This website has been designed to be compatible with the following assistive technologies:</p>
+          <ul class="legal-list">
+            <li>Screen readers including NVDA, JAWS, and VoiceOver (macOS and iOS).</li>
+            <li>Browser zoom up to 200% without loss of content or functionality.</li>
+            <li>Keyboard-only navigation.</li>
+            <li>High contrast display modes.</li>
+            <li>Voice recognition software including Dragon NaturallySpeaking.</li>
+          </ul>
+          <p>The website is built using standard HTML, CSS, and JavaScript without reliance on frameworks that can introduce accessibility regressions. We do not use PDFs as the primary means of presenting information.</p>
+        </section>
+
+        <section class="legal-block" id="feedback">
+          <h2 class="legal-h2">6. Feedback and contact</h2>
+          <p>We welcome feedback on the accessibility of this website. If you experience any barriers, find content difficult to access, or need information in a different format, please get in touch:</p>
+          <ul class="legal-list legal-list--plain">
+            <li><strong>Email:</strong> <a href="mailto:friendsofisaacs@hotmail.com" class="legal-link">friendsofisaacs@hotmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:07496381323" class="legal-link">07496 381323</a></li>
+          </ul>
+          <p>We aim to respond to accessibility feedback within 5 working days.</p>
+        </section>
+
+        <section class="legal-block" id="enforcement">
+          <h2 class="legal-h2">7. Enforcement</h2>
+          <p>If you are not satisfied with our response to an accessibility concern, you can contact the Equality Advisory and Support Service (EASS):</p>
+          <ul class="legal-list legal-list--plain">
+            <li><strong>Website:</strong> <a href="https://www.equalityadvisoryservice.com" target="_blank" rel="noopener noreferrer" class="legal-link">equalityadvisoryservice.com</a></li>
+            <li><strong>Phone:</strong> 0808 800 0082</li>
+          </ul>
+          <p>This statement was prepared in January 2025. We will review and update it following any significant changes to the website.</p>
+        </section>
+
+        <div class="legal-other-docs">
+          <p class="legal-other-docs-label">Other policies</p>
+          <div class="legal-other-docs-links">
+            <a href="/privacy-policy.html" class="legal-other-link">Privacy Policy</a>
+            <a href="/cookie-policy.html" class="legal-other-link">Cookie Policy</a>
+            <a href="/terms.html" class="legal-other-link">Terms of Use</a>
+            <a href="/safeguarding.html" class="legal-other-link">Safeguarding Statement</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PRE-FOOTER CTA STRIPE
+       ============================================================ -->
+  <div class="prefooter-stripe">
+    <div class="container prefooter-inner">
+      <p class="prefooter-text">Need support or looking to donate? <a href="/contact.html" class="prefooter-link">Get in touch &rsaquo;</a></p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-tagline">Take it if you need it,<br />share if you have a spare</p>
+        <p class="footer-cic">Community Interest Company No. 14711585</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/FriendsofIsaacsFoodBank" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link">
+            <img src="assets/facebook.svg" alt="Facebook" width="18" height="18" />
+          </a>
+          <a href="https://www.amazon.co.uk/hz/wishlist/ls/SWV1YE7PH01U?ref_=wl_share" target="_blank" rel="noopener noreferrer" aria-label="Amazon Wishlist" class="footer-social-link">
+            <img src="assets/amazon.avif" alt="Amazon Wishlist" width="18" height="18" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <p class="footer-nav-heading">Navigate</p>
+        <ul>
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/our-story.html" class="footer-link">Our Story</a></li>
+          <li><a href="/get-involved.html" class="footer-link">Get Involved</a></li>
+          <li><a href="/find-a-shed.html" class="footer-link">Find a Shed</a></li>
+          <li><a href="/contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-nav-heading">Get in Touch</p>
+        <ul>
+          <li><a href="mailto:friendsofisaacs@hotmail.com" class="footer-link">friendsofisaacs@hotmail.com</a></li>
+          <li><a href="tel:07496381323" class="footer-link">07496 381323</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <div class="container footer-legal-inner">
+        <p>&copy; 2025 Friends of Isaac's Food Bank CIC. All rights reserved. &bull; Built by <a href="https://www.lemiyu.com" target="_blank" rel="noopener noreferrer" class="footer-legal-link">Lemiyu</a></p>
+        <ul class="footer-legal-links">
+          <li><a href="/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/cookie-policy.html" class="footer-link">Cookie Policy</a></li>
+          <li><a href="/accessibility.html" class="footer-link">Accessibility</a></li>
+          <li><a href="/terms.html" class="footer-link">Terms of Use</a></li>
+          <li><a href="/safeguarding.html" class="footer-link">Safeguarding</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const nav = document.getElementById('header-nav');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      hamburgerIcon.src = isOpen ? 'assets/hamburger-close.svg' : 'assets/hamburger-menu.svg';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+        hamburger.setAttribute('aria-label', 'Open menu');
+        hamburgerIcon.src = 'assets/hamburger-menu.svg';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+        hamburger.setAttribute('aria-label', 'Open menu');
+        hamburgerIcon.src = 'assets/hamburger-menu.svg';
+        hamburger.focus();
+      }
+    });
+
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    });
+
+    const sections = document.querySelectorAll('.legal-block');
+    const navLinks = document.querySelectorAll('.legal-nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('is-active'));
+          const active = document.querySelector(`.legal-nav-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>

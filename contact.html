@@ -203,27 +203,27 @@
         <p class="donate-strip-sub">You don't need to send us a message to make a difference. Pick an amount and donate directly — every pound goes straight to keeping our sheds stocked.</p>
       </div>
       <div class="donate-strip-form">
-        <div class="donate-amounts">
-          <button class="donate-amount" data-amount="5">£5</button>
-          <button class="donate-amount" data-amount="10">£10</button>
-          <button class="donate-amount is-selected" data-amount="20">£20</button>
-          <button class="donate-amount" data-amount="50">£50</button>
+<div class="donate-amounts">
+          <button class="donate-amount" data-amount="5" disabled aria-disabled="true">£5</button>
+          <button class="donate-amount" data-amount="10" disabled aria-disabled="true">£10</button>
+          <button class="donate-amount" data-amount="20" disabled aria-disabled="true">£20</button>
+          <button class="donate-amount" data-amount="50" disabled aria-disabled="true">£50</button>
         </div>
         <div class="donate-custom-wrap">
-          <label for="donate-custom-contact" class="donate-custom-label">Or enter your own amount</label>
+          <label for="donate-custom" class="donate-custom-label">Or enter your own amount</label>
           <div class="donate-input-wrap">
             <span class="donate-pound" aria-hidden="true">£</span>
-            <input type="number" id="donate-custom-contact" class="donate-input donate-input--contact" placeholder="0.00" min="1" step="0.01" />
+            <input type="number" id="donate-custom" class="donate-input" placeholder="0.00" min="1" step="0.01" disabled aria-disabled="true" />
           </div>
         </div>
         <div class="donate-actions">
-          <a href="#" class="btn btn--primary donate-now-main" id="donate-now-contact">Donate Now</a>
+          <button type="button" class="btn btn--primary donate-now-main btn--disabled" id="donate-now" disabled aria-disabled="true">Donate Now</button>
           <div class="donate-actions-secondary">
             <a href="https://gofundme.com/f/friends-of-isaacs-food-bank" target="_blank" rel="noopener noreferrer" class="btn btn--outline donate-submit">Donate via GoFundMe</a>
             <a href="https://www.amazon.co.uk/hz/wishlist/ls/SWV1YE7PH01U?ref_=wl_share" target="_blank" rel="noopener noreferrer" class="btn btn--outline donate-wishlist">Amazon Wishlist</a>
           </div>
         </div>
-        <p class="donate-note">Direct payment coming soon. GoFundMe accepted in the meantime.</p>
+        <p class="donate-note donate-note--alert">We are currently experiencing issues with our donation system. If you'd like to donate, please do so through our GoFundMe or our Amazon Wishlist. Thank you for your support.</p>
       </div>
     </div>
   </section>

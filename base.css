@@ -898,6 +898,29 @@ button {
   font-size: var(--fs-md);
 }
 
+.donate-amount:disabled,
+.donate-input:disabled {
+  background-color: #eee;
+  border-color: #ccc;
+  color: #999;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn--disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: #777;
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.donate-note--alert {
+  color: #C0392B;
+  font-weight: 700;
+}
+
 .donate-submit,
 .donate-wishlist {
   flex: 1;

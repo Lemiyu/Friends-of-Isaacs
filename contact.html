@@ -298,6 +298,9 @@
   <!-- ============================================================
        JAVASCRIPT
        ============================================================ -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <script>
     // Hamburger
     const hamburger = document.getElementById('hamburger');
@@ -348,26 +351,62 @@
       if (select) select.value = typeMap[typeParam];
     }
 
-    // Form submission handler (frontend only — wire to backend/service in Phase 2)
-    document.getElementById('contact-submit').addEventListener('click', () => {
-      const name    = document.getElementById('field-name').value.trim();
-      const email   = document.getElementById('field-email').value.trim();
-      const type    = document.getElementById('field-type').value;
-      const message = document.getElementById('field-message').value.trim();
-      const consent = document.querySelector('.form-checkbox').checked;
-      const errorEl = document.getElementById('form-error');
 
-      if (!name || !email || !type || !message || !consent) {
-        errorEl.hidden = false;
-        errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        return;
-      }
 
-      errorEl.hidden = true;
-      document.getElementById('contact-form-fields').hidden = true;
-      document.getElementById('form-success').hidden = false;
-      document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
+// EmailJS config
+emailjs.init({ publicKey: 'lL9m-03rvakNYVnNx' });
+
+const enquiryLabels = {
+  donate: "I'd like to donate money",
+  food: "I'd like to donate food or items",
+  volunteer: "I'd like to volunteer",
+  help: "I need help / food support",
+  corporate: "Corporate or partnership enquiry",
+  media: "Media enquiry",
+  other: "Something else"
+};
+
+document.getElementById('contact-submit').addEventListener('click', () => {
+  const name      = document.getElementById('field-name').value.trim();
+  const email     = document.getElementById('field-email').value.trim();
+  const phone     = document.getElementById('field-phone').value.trim();
+  const type      = document.getElementById('field-type').value;
+  const message   = document.getElementById('field-message').value.trim();
+  const consent   = document.querySelector('.form-checkbox').checked;
+  const errorEl   = document.getElementById('form-error');
+  const submitBtn = document.getElementById('contact-submit');
+
+  if (!name || !email || !type || !message || !consent) {
+    errorEl.hidden = false;
+    errorEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return;
+  }
+
+  errorEl.hidden = true;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  emailjs.send('service_8q8xz6k', 'template_eowpims', {
+    name: name,
+    email: email,
+    phone: phone || 'Not provided',
+    enquiry_type: enquiryLabels[type] || type,
+    message: message
+  }).then(() => {
+    document.getElementById('contact-form-fields').hidden = true;
+    document.getElementById('form-success').hidden = false;
+    document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }).catch((err) => {
+    console.error('EmailJS error:', err);
+    errorEl.querySelector('p').textContent = "Something went wrong sending your message — please try again or email us directly.";
+    errorEl.hidden = false;
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  });
+});
+
+
+
     // Donate amount selector (contact page)
     const contactAmountBtns = document.querySelectorAll('.donate-amount');
     const contactCustomInput = document.getElementById('donate-custom-contact');
@@ -386,6 +425,9 @@
       });
     }
   </script>
+
+
+
 
 </body>
 </html>

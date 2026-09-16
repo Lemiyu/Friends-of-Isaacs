@@ -769,10 +769,10 @@ button {
 }
 
 .donate-strip-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: stretch;
 }
 
 .donate-strip-label {
@@ -797,114 +797,29 @@ button {
   box-shadow: var(--shadow-md);
 }
 
-.donate-amounts {
+.donate-buttons {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  flex-direction: row;
+  gap: 24px;
 }
 
-.donate-amount {
-  flex: 1;
-  min-width: 56px;
-  padding: 12px 8px;
-  border-radius: var(--radius-full);
-  border: 2px solid rgba(0,0,0,0.10);
-  font-size: var(--fs-base);
-  font-weight: var(--fw-bold);
-  color: var(--text-dark);
-  background-color: var(--bg-light);
-  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
-  cursor: pointer;
-  text-align: center;
-}
-
-.donate-amount:hover {
-  border-color: var(--primary);
-  background-color: var(--bg-section);
-}
-
-.donate-amount.is-selected {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: var(--white);
-}
-
-.donate-custom-wrap {
-  margin-bottom: 20px;
-}
-
-.donate-custom-label {
-  display: block;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-bold);
-  color: var(--text-mid);
-  margin-bottom: 8px;
-}
-
-.donate-input-wrap {
-  position: relative;
-}
-
-.donate-pound {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: var(--fw-bold);
-  color: var(--text-mid);
-  pointer-events: none;
-}
-
-.donate-input {
-  width: 100%;
-  padding: 12px 16px 12px 32px;
-  border: 2px solid rgba(0,0,0,0.10);
-  border-radius: var(--radius-full);
-  font-family: var(--font-base);
-  font-size: var(--fs-base);
-  font-weight: var(--fw-bold);
-  color: var(--text-dark);
-  background-color: var(--bg-light);
-  transition: border-color var(--transition);
-  outline: none;
-}
-
-.donate-input:focus {
-  border-color: var(--primary);
-}
-
-/* Remove number input spinners */
-.donate-input::-webkit-outer-spin-button,
-.donate-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.donate-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.donate-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.donate-now-main {
+.donate-btn {
   width: 100%;
   justify-content: center;
   padding: 16px;
   font-size: var(--fs-md);
 }
 
-.donate-amount:disabled,
-.donate-input:disabled {
-  background-color: #eee;
-  border-color: #ccc;
-  color: #999;
-  opacity: 0.7;
-  cursor: not-allowed;
+.donate-btn.donate-btn--paypal {
+  background-color: #0070BA;
+  border-color: #0070BA;
+  color: var(--white);
+}
+
+.donate-btn.donate-btn--paypal:hover {
+  background-color: #003087;
+  border-color: #003087;
+  color: var(--white);
 }
 
 .btn--disabled {
@@ -917,47 +832,10 @@ button {
 }
 
 
-.donate-note--alert {
-  color: #C0392B;
-  font-weight: 700;
-}
-
-.donate-submit,
-.donate-wishlist {
-  flex: 1;
-  justify-content: center;
-}
-
-/* Secondary row — GoFundMe + Amazon side by side */
-.donate-actions .btn--outline {
-  display: inline-flex;
-}
-
-.donate-note {
-  font-size: var(--fs-xs);
-  color: var(--text-mid);
-  text-align: center;
-}
-
-/* Secondary buttons row */
-.donate-actions-secondary {
-  display: flex;
-  gap: 12px;
-}
-
-@media (max-width: 900px) {
-  .donate-strip-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
 
 @media (max-width: 480px) {
   .donate-strip-form {
     padding: 24px 20px;
-  }
-  .donate-actions-secondary {
-    flex-direction: column;
   }
 }
 
@@ -970,15 +848,15 @@ button {
 
 
 /* ------------------------------------------------------------
-   FIND A SHED
+   FIND A site
    ------------------------------------------------------------ */
-.shed-grid {
+.site-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.shed-card {
+.site-card {
   background-color: var(--white);
   border-radius: var(--radius-md);
   padding: 24px;
@@ -986,12 +864,12 @@ button {
   transition: box-shadow var(--transition), transform var(--transition);
 }
 
-.shed-card:hover {
+.site-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
 
-.shed-card-tag {
+.site-card-tag {
   display: inline-block;
   background-color: var(--secondary);
   color: var(--text-dark);
@@ -1004,14 +882,14 @@ button {
   margin-bottom: 14px;
 }
 
-.shed-address {
+.site-address {
   font-size: var(--fs-base);
   font-weight: var(--fw-bold);
   color: var(--text-dark);
   line-height: var(--lh-base);
 }
 
-.shed-postcode {
+.site-postcode {
   font-size: var(--fs-sm);
   color: var(--primary-dark);
   font-weight: var(--fw-bold);
@@ -1019,13 +897,13 @@ button {
 }
 
 @media (max-width: 900px) {
-  .shed-grid {
+  .site-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 560px) {
-  .shed-grid {
+  .site-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1046,7 +924,7 @@ button {
 .supporters-marquee {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 120s linear infinite;
 }
 
 .supporters-marquee:hover {
@@ -1441,7 +1319,6 @@ button {
    ------------------------------------------------------------ */
 .timeline {
   position: relative;
-  max-width: 800px;
   margin: 0 auto;
   padding-left: 32px;
 }
@@ -1907,7 +1784,7 @@ button {
   margin-bottom: 20px;
 }
 
-.contact-shed-btn {
+.contact-site-btn {
   align-self: flex-start;
 }
 
@@ -2451,8 +2328,8 @@ button {
 
 
 /* ============================================================
-   FIND-A-SHED.CSS — Friends of Isaac's Food Bank CIC
-   Find a Shed page specific styles
+   FIND-A-site.CSS — Friends of Isaac's Food Bank CIC
+   Find a site page specific styles
    ============================================================ */
 
 
@@ -2515,13 +2392,13 @@ button {
 
 
 /* ------------------------------------------------------------
-   SHED LISTINGS
+   site LISTINGS
    ------------------------------------------------------------ */
-.sheds-section {
+.sites-section {
   padding-bottom: 0;
 }
 
-.shed-listing {
+.site-listing {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
@@ -2529,20 +2406,20 @@ button {
   padding-bottom: var(--padding-y);
 }
 
-.shed-listing--reverse {
+.site-listing--reverse {
   direction: rtl;
 }
 
-.shed-listing--reverse > * {
+.site-listing--reverse > * {
   direction: ltr;
 }
 
 /* Image */
-.shed-listing-media {
+.site-listing-media {
   position: relative;
 }
 
-.shed-listing-img {
+.site-listing-img {
   width: 100%;
   height: 360px;
   object-fit: cover;
@@ -2552,13 +2429,13 @@ button {
 }
 
 /* Body */
-.shed-listing-body {
+.site-listing-body {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.shed-listing-tag {
+.site-listing-tag {
   display: inline-block;
   background-color: var(--secondary);
   color: var(--text-dark);
@@ -2569,9 +2446,10 @@ button {
   padding: 5px 12px;
   border-radius: var(--radius-full);
   align-self: flex-start;
+  margin-top: 24px;
 }
 
-.shed-listing-name {
+.site-listing-name {
   font-size: var(--fs-2xl);
   font-weight: var(--fw-extrabold);
   color: var(--text-dark);
@@ -2579,21 +2457,21 @@ button {
   margin: 0;
 }
 
-.shed-listing-address {
+.site-listing-address {
   font-style: normal;
   font-size: var(--fs-base);
   color: var(--text-mid);
   line-height: var(--lh-relaxed);
 }
 
-.shed-listing-postcode {
+.site-listing-postcode {
   font-weight: var(--fw-extrabold);
   color: var(--primary-dark);
   font-size: var(--fs-md);
 }
 
 /* Meta */
-.shed-listing-meta {
+.site-listing-meta {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -2603,68 +2481,68 @@ button {
   border-left: 3px solid var(--primary);
 }
 
-.shed-meta-row {
+.site-meta-row {
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 8px;
   font-size: var(--fs-sm);
 }
 
-.shed-meta-row dt {
+.site-meta-row dt {
   font-weight: var(--fw-extrabold);
   color: var(--text-dark);
 }
 
-.shed-meta-row dd {
+.site-meta-row dd {
   color: var(--text-mid);
 }
 
 /* Actions */
-.shed-listing-actions {
+.site-listing-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
 
 /* Divider */
-.shed-divider {
+.site-divider {
   border: none;
   border-top: 1px solid rgba(0,0,0,0.07);
   margin: 0;
 }
 
 @media (max-width: 900px) {
-  .shed-listing,
-  .shed-listing--reverse {
+  .site-listing,
+  .site-listing--reverse {
     grid-template-columns: 1fr;
     direction: ltr;
     gap: 28px;
   }
 
-  .shed-listing--reverse > * {
+  .site-listing--reverse > * {
     direction: ltr;
   }
 
-  .shed-listing-img {
+  .site-listing-img {
     height: 260px;
   }
 
-  .shed-listing {
+  .site-listing {
     padding-bottom: var(--padding-y-mob);
   }
 }
 
 @media (max-width: 480px) {
-  .shed-listing-img {
+  .site-listing-img {
     height: 220px;
   }
 
-  .shed-meta-row {
+  .site-meta-row {
     grid-template-columns: 1fr;
     gap: 2px;
   }
 
-  .shed-listing-actions {
+  .site-listing-actions {
     flex-direction: column;
   }
 }
@@ -2701,7 +2579,7 @@ button {
   border-radius: var(--radius-md);
   padding: 28px;
   box-shadow: var(--shadow-sm);
-  border: 2px dashed rgba(0,0,0,0.12);
+  border: 2px dasite rgba(0,0,0,0.12);
   display: flex;
   flex-direction: column;
   gap: 8px;

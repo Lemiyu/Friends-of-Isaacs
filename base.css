@@ -788,6 +788,13 @@ button {
   font-size: var(--fs-base);
   color: var(--text-mid);
   line-height: var(--lh-relaxed);
+  max-width: 940px;
+}
+
+.donate-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 .donate-strip-form {
@@ -797,10 +804,18 @@ button {
   box-shadow: var(--shadow-md);
 }
 
+.donate-card-title {
+  font-weight: 800;
+  font-size: var(--fs-md);
+  color: var(--text-dark);
+  margin: 0 0 16px;
+}
+
+/* One-off buttons */
 .donate-buttons {
   display: flex;
-  flex-direction: row;
-  gap: 24px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .donate-btn {
@@ -831,11 +846,74 @@ button {
   pointer-events: none;
 }
 
+/* Monthly standing order card */
+.donate-monthly {
+  border-top: 6px solid var(--secondary);
+}
 
+.bank-details {
+  margin: 0;
+}
 
-@media (max-width: 480px) {
-  .donate-strip-form {
-    padding: 24px 20px;
+.bank-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--bg-section);
+}
+
+.bank-row:last-child {
+  border-bottom: 0;
+}
+
+.bank-row dt {
+  font-size: var(--fs-base);
+  color: var(--text-mid);
+  margin-bottom: 4px;
+}
+
+.bank-row dd {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bank-value {
+  font-weight: 700;
+  font-size: var(--fs-md);
+  color: var(--text-dark);
+  overflow-wrap: anywhere;
+}
+
+.bank-copy {
+  flex-shrink: 0;
+  font-family: inherit;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  padding: 8px 16px;
+  min-height: 44px;
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bank-copy:hover,
+.bank-copy:focus-visible,
+.bank-copy.is-copied {
+  background-color: var(--primary);
+}
+
+.donate-monthly-note {
+  margin: 16px 0 0;
+  color: var(--text-mid);
+}
+
+@media (min-width: 900px) {
+  .donate-options {
+    grid-template-columns: 1.3fr 1fr;
   }
 }
 
@@ -845,6 +923,14 @@ button {
     padding-bottom: var(--padding-y-mob);
   }
 }
+
+@media (max-width: 480px) {
+  .donate-strip-form {
+    padding: 24px 20px;
+  }
+}
+
+
 
 
 /* ------------------------------------------------------------

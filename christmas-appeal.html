@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4PWT5ELY1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-P4PWT5ELY1');
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="assets/favicon-icon.webp" />
+  <meta name="description" content="Friends of Isaac's Christmas Toy Appeal. Donate new toys, gifts for teenagers, advent calendars and selection boxes for families across Redditch." />
+  <title>Christmas Toy Appeal | Friends of Isaac's Food Bank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="christmas.css" />
+  <link rel="stylesheet" href="christmas-appeal.css" />
+  <script src="christmas.js"></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / NAV
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+
+      <a href="/" class="header-logo" aria-label="Friends of Isaac's Food Bank — home">
+        <img src="assets/foi-logo.webp" alt="Friends of Isaac's Food Bank" height="48" />
+      </a>
+
+      <nav class="header-nav" id="header-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/our-story.html" class="nav-link">Our Story</a></li>
+          <li><a href="/get-involved.html" class="nav-link">Get Involved</a></li>
+          <li><a href="/find-a-site.html" class="nav-link">Find a Site</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact Us</a></li>
+        </ul>
+
+        <div class="nav-mobile-ctas">
+          <a href="/contact.html?type=donate" class="btn btn--primary nav-mobile-btn">Donate Now</a>
+          <a href="/contact.html?type=help" class="btn btn--secondary-yellow nav-mobile-btn">Need Help?</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/contact.html?type=help" class="btn btn--secondary-yellow header-cta header-cta--help">Need Help?</a>
+        <a href="/contact.html?type=donate" class="btn btn--primary header-cta">Donate Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="header-nav">
+          <img src="assets/hamburger-menu.svg" alt="" aria-hidden="true" id="hamburger-icon" width="28" height="28" />
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <!-- ============================================================
+         CLOSED MESSAGE (shows outside the season dates)
+         ============================================================ -->
+    <section class="section xmas-closed xmas-hide" aria-label="Christmas Appeal closed">
+      <div class="container xmas-closed-inner">
+        <p class="section-label">Christmas Appeal</p>
+        <h1 class="heading-lg">Our Christmas Appeal is closed for now</h1>
+        <p class="subheading">Thank you to everyone who donated toys, gifts and treats. Keep an eye out for next year's appeal. In the meantime, there are plenty of ways to help all year round.</p>
+        <div class="xmas-closed-actions">
+          <a href="/get-involved.html" class="btn btn--primary">Get Involved</a>
+          <a href="/find-a-site.html" class="btn btn--outline">Find a Site</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         HERO (with countdown)
+         ============================================================ -->
+    <section class="xmas-page-hero xmas-only" aria-label="Christmas Toy Appeal">
+      <div class="xmas-page-hero-media" role="img" aria-label="Shelves stacked with donated toys and Christmas gift boxes">
+        <div class="xmas-page-hero-overlay" aria-hidden="true"></div>
+      </div>
+      <canvas class="xmas-snow" data-snow aria-hidden="true"></canvas>
+
+      <div class="container xmas-page-hero-inner">
+        <div class="xmas-page-hero-content">
+          <h1 class="xmas-page-hero-headline">Christmas Toy <span class="xmas-highlight">Appeal</span></h1>
+          <p class="xmas-page-hero-sub">Help us make every child feel special this Christmas. New toys, gifts for teenagers, advent calendars and selection boxes all go to families across Redditch who'd otherwise go without.</p>
+
+          <div class="xmas-mini-countdown">
+            <p class="xmas-mini-countdown-label" id="xmas-countdown-heading">Counting down to <span id="xmas-countdown-label">Christmas Day</span></p>
+            <div class="xmas-mini-countdown-grid" id="xmas-countdown" role="timer" aria-live="off">
+              <div class="xmas-mini-count">
+                <span class="xmas-mini-count-num" data-unit="days">00</span>
+                <span class="xmas-mini-count-label">Days</span>
+              </div>
+              <div class="xmas-mini-count">
+                <span class="xmas-mini-count-num" data-unit="hours">00</span>
+                <span class="xmas-mini-count-label">Hours</span>
+              </div>
+              <div class="xmas-mini-count">
+                <span class="xmas-mini-count-num" data-unit="mins">00</span>
+                <span class="xmas-mini-count-label">Mins</span>
+              </div>
+              <div class="xmas-mini-count">
+                <span class="xmas-mini-count-num" data-unit="secs">00</span>
+                <span class="xmas-mini-count-label">Secs</span>
+              </div>
+            </div>
+            <p class="xmas-mini-countdown-done" id="xmas-countdown-done" hidden>Gift drop-offs have now closed. Thank you, Redditch! You can still <a href="#donate">donate online</a>.</p>          </div>
+
+          <div class="xmas-page-hero-actions">
+            <a href="#drop-off" class="btn btn--xmas-light xmas-dropoff-open-only">Donate a Gift</a>
+            <a href="#donate" class="btn btn--secondary-yellow">Donate Money</a>
+          </div>
+        </div>
+
+        <div class="xmas-tag" aria-hidden="true">
+          <span class="xmas-tag-string"></span>
+          <div class="xmas-tag-card">
+            <span class="xmas-tag-hole"></span>
+            <p class="xmas-tag-line"><span class="xmas-tag-key">To</span>Every child in Redditch</p>
+            <p class="xmas-tag-line"><span class="xmas-tag-key">From</span>You</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         SLEIGH-O-METER (numbers set in christmas.js CONFIG)
+         ============================================================ -->
+    <section class="xmas-sleigh xmas-only" id="sleigh-o-meter" aria-labelledby="sleigh-heading">
+      <div class="container xmas-sleigh-inner">
+
+        <div class="xmas-sleigh-text">
+          <p class="section-label xmas-sleigh-label">Sleigh-o-meter</p>
+          <h2 id="sleigh-heading" class="xmas-sleigh-heading">How full is Isaac's sleigh?</h2>
+          <p class="xmas-sleigh-sub">Our goal is <span id="sleigh-target-text">500</span> gifts this Christmas.</p>
+        </div>
+
+        <div class="xmas-sleigh-meter" id="sleighometer">
+          <div class="xmas-sleigh-stats">
+            <p class="xmas-sleigh-count"><span class="xmas-sleigh-num" id="sleigh-collected">0</span> gifts collected</p>
+            <p class="xmas-sleigh-goal">Goal: <span id="sleigh-target">500</span> &bull; <span id="sleigh-percent">0%</span></p>
+          </div>
+
+          <div class="xmas-sleigh-rail">
+            <svg class="xmas-sleigh-icon" viewBox="0 0 64 40" aria-hidden="true">
+              <rect x="18" y="2" width="10" height="9" rx="1" fill="#F2C14E" />
+              <rect x="29" y="4" width="9" height="7" rx="1" fill="#6DBF8A" />
+              <path d="M23 2v9M33.5 4v7" stroke="#C8312B" stroke-width="1.5" />
+              <path d="M10 26 L14 11 H40 Q48 11 50 26 Z" fill="#C8312B" />
+              <path d="M14 15 H41" stroke="#F2C14E" stroke-width="2" />
+              <path d="M18 26 V33 M42 26 V33" stroke="#F2C14E" stroke-width="2.5" stroke-linecap="round" />
+              <path d="M4 33 H50 Q58 33 58 25" fill="none" stroke="#F2C14E" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            <div class="xmas-sleigh-track" role="progressbar" aria-labelledby="sleigh-heading" aria-valuemin="0" aria-valuemax="500" aria-valuenow="0">
+              <div class="xmas-sleigh-fill"></div>
+            </div>
+          </div>
+
+          <div class="xmas-sleigh-foot">
+            <p class="xmas-sleigh-updated" id="sleigh-updated" hidden></p>
+            <a href="#drop-off" class="xmas-sleigh-link">Help fill the sleigh &rsaquo;</a>
+          </div>
+
+          <p class="xmas-sleigh-complete" id="sleigh-complete" hidden>We filled the sleigh! Thank you, Redditch.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============================================================
+         WHAT WE NEED
+         ============================================================ -->
+    <section class="section xmas-needs xmas-only" id="what-we-need" aria-labelledby="needs-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label xmas-label">What we need</p>
+          <h2 id="needs-heading" class="heading-md">Four ways to make Christmas special</h2>
+          <p class="subheading xmas-section-sub">Everything donated goes to families across Redditch this Christmas. Here's what we're collecting.</p>
+        </div>
+
+        <ul class="xmas-needs-grid">
+
+          <li class="xmas-need">
+            <span class="xmas-need-string" aria-hidden="true"></span>
+            <div class="xmas-need-tag">
+              <span class="xmas-need-hole" aria-hidden="true"></span>
+              <svg class="xmas-need-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="9" width="18" height="12" rx="1.5" />
+                <rect x="2" y="6" width="20" height="4" rx="1" />
+                <path d="M12 6v15" />
+                <path d="M12 6c-1.5-3-5-3.5-5-1.5S10 6 12 6zM12 6c1.5-3 5-3.5 5-1.5S14 6 12 6z" />
+              </svg>
+              <h3 class="xmas-need-title">New Toys</h3>
+              <p class="xmas-need-text">Something special to open on Christmas morning, for children of all ages.</p>
+            </div>
+          </li>
+
+          <li class="xmas-need">
+            <span class="xmas-need-string" aria-hidden="true"></span>
+            <div class="xmas-need-tag">
+              <span class="xmas-need-hole" aria-hidden="true"></span>
+              <svg class="xmas-need-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 15v-3a8 8 0 0 1 16 0v3" />
+                <rect x="2.5" y="14" width="4" height="7" rx="1.5" />
+                <rect x="17.5" y="14" width="4" height="7" rx="1.5" />
+              </svg>
+              <h3 class="xmas-need-title">Gifts for Teenagers</h3>
+              <p class="xmas-need-text">Teens can be tricky to buy for, so gifts for them are always welcome.</p>
+            </div>
+          </li>
+
+          <li class="xmas-need">
+            <span class="xmas-need-string" aria-hidden="true"></span>
+            <div class="xmas-need-tag">
+              <span class="xmas-need-hole" aria-hidden="true"></span>
+              <svg class="xmas-need-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="17" rx="2" />
+                <path d="M3 9h18M9 9v12M15 9v12M3 15h18M8 2v4M16 2v4" />
+              </svg>
+              <h3 class="xmas-need-title">Advent Calendars</h3>
+              <p class="xmas-need-text">Help a family count down to the big day together.</p>
+            </div>
+          </li>
+
+          <li class="xmas-need">
+            <span class="xmas-need-string" aria-hidden="true"></span>
+            <div class="xmas-need-tag">
+              <span class="xmas-need-hole" aria-hidden="true"></span>
+              <svg class="xmas-need-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="5" />
+                <path d="M7 12L3 9v6zM17 12l4-3v6z" />
+              </svg>
+              <h3 class="xmas-need-title">Selection Boxes</h3>
+              <p class="xmas-need-text">A little bit of Christmas magic in a box.</p>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         DROP-OFF POINTS
+         To add a location: uncomment a card below and fill it in.
+         Directions: change the query= value to the name + postcode.
+         ============================================================ -->
+    <section class="section section--alt xmas-dropoff xmas-only" id="drop-off" aria-labelledby="dropoff-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label xmas-label">Drop-off points</p>
+          <h2 id="dropoff-heading" class="heading-md">Where to drop off your gifts</h2>
+          <p class="subheading xmas-section-sub">Bring your gifts to our Christmas drop-off point below. We're adding more locations soon.</p>
+        </div>
+
+        <div class="xmas-dropoff-grid">
+
+          <article class="xmas-dropoff-card">
+            <span class="xmas-dropoff-tag">Drop-off point</span>
+            <h3 class="xmas-dropoff-name">The Greenlands Pub</h3>
+            <address class="xmas-dropoff-address">
+              Studley Road<br />
+              Redditch<br />
+              <span class="xmas-dropoff-postcode">B98 7HL</span>
+            </address>
+            <dl class="xmas-dropoff-meta">
+              <div class="xmas-dropoff-row">
+                <dt>Drop-off times</dt>
+                <dd>During pub opening hours</dd>
+              </div>
+              <div class="xmas-dropoff-row">
+                <dt>Last drop-off</dt>
+                <dd>Friday 11 December</dd>
+              </div>
+            </dl>
+            <a href="https://www.google.com/maps/search/?api=1&query=The+Greenlands+Studley+Road+Redditch+B98+7HL" target="_blank" rel="noopener noreferrer" class="btn btn--outline xmas-dropoff-btn">Get directions</a>
+          </article>
+
+          <!--
+          <article class="xmas-dropoff-card">
+            <span class="xmas-dropoff-tag">Drop-off point</span>
+            <h3 class="xmas-dropoff-name">[Location name]</h3>
+            <address class="xmas-dropoff-address">
+              [Street address]<br />
+              [Area], Redditch<br />
+              <span class="xmas-dropoff-postcode">[Postcode]</span>
+            </address>
+            <dl class="xmas-dropoff-meta">
+              <div class="xmas-dropoff-row">
+                <dt>Drop-off times</dt>
+                <dd>[Days and times]</dd>
+              </div>
+              <div class="xmas-dropoff-row">
+                <dt>Last drop-off</dt>
+                <dd>Friday 11 December</dd>
+              </div>
+            </dl>
+            <a href="https://www.google.com/maps/search/?api=1&query=Redditch" target="_blank" rel="noopener noreferrer" class="btn btn--outline xmas-dropoff-btn">Get directions</a>
+          </article>
+
+          <article class="xmas-dropoff-card">
+            <span class="xmas-dropoff-tag">Drop-off point</span>
+            <h3 class="xmas-dropoff-name">[Location name]</h3>
+            <address class="xmas-dropoff-address">
+              [Street address]<br />
+              [Area], Redditch<br />
+              <span class="xmas-dropoff-postcode">[Postcode]</span>
+            </address>
+            <dl class="xmas-dropoff-meta">
+              <div class="xmas-dropoff-row">
+                <dt>Drop-off times</dt>
+                <dd>[Days and times]</dd>
+              </div>
+              <div class="xmas-dropoff-row">
+                <dt>Last drop-off</dt>
+                <dd>Friday 11 December</dd>
+              </div>
+            </dl>
+            <a href="https://www.google.com/maps/search/?api=1&query=Redditch" target="_blank" rel="noopener noreferrer" class="btn btn--outline xmas-dropoff-btn">Get directions</a>
+          </article>
+          -->
+
+        </div>
+
+        <p class="xmas-dropoff-note">Can't get to a drop-off point? <a href="#donate">Donate online</a> or call us on <a href="tel:07496381323">07496 381323</a>.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         DONATE STRIP
+         ============================================================ -->
+    <section class="donate-strip xmas-only" id="donate" aria-label="Donate money">
+      <div class="container donate-strip-inner">
+        <div class="donate-strip-text">
+          <p class="section-label donate-strip-label">Donate Money</p>
+          <h2 class="heading-md donate-strip-heading">Can't make it to a drop-off point?</h2>
+          <p class="donate-strip-sub">A donation of any size helps us make Christmas special for families across Redditch, and keeps every site stocked through the winter. Give once, or set up a monthly standing order through your banking app.</p>
+        </div>
+
+        <div class="donate-options">
+          <div class="donate-strip-form donate-monthly">
+            <p class="donate-card-title">Set up a monthly standing order</p>
+            <dl class="bank-details">
+              <div class="bank-row">
+                <dt>Account name</dt>
+                <dd>
+                  <span class="bank-value">Friends of Isaac's Food Bank CIC</span>
+                  <button type="button" class="bank-copy" data-copy="Friends of Isaac's Food Bank CIC" aria-label="Copy account name">Copy</button>
+                </dd>
+              </div>
+              <div class="bank-row">
+                <dt>Sort code</dt>
+                <dd>
+                  <span class="bank-value">20-08-64</span>
+                  <button type="button" class="bank-copy" data-copy="200864" aria-label="Copy sort code">Copy</button>
+                </dd>
+              </div>
+              <div class="bank-row">
+                <dt>Account number</dt>
+                <dd>
+                  <span class="bank-value">60477362</span>
+                  <button type="button" class="bank-copy" data-copy="60477362" aria-label="Copy account number">Copy</button>
+                </dd>
+              </div>
+            </dl>
+            <p class="donate-monthly-note">Thank you. Every regular gift makes a real difference.</p>
+          </div>
+
+          <div class="donate-strip-form">
+            <p class="donate-card-title">Or make a one-off donation</p>
+            <div class="donate-buttons">
+              <a href="https://gofundme.com/f/friends-of-isaacs-food-bank" target="_blank" rel="noopener noreferrer" class="btn btn--primary donate-btn">Donate via GoFundMe</a>
+              <a href="https://www.amazon.co.uk/hz/wishlist/ls/SWV1YE7PH01U?ref_=wl_share" target="_blank" rel="noopener noreferrer" class="btn btn--outline donate-btn">Amazon Wishlist</a>
+              <a href="https://www.paypal.com/ncp/payment/CM2QX9DTTVWS2" target="_blank" rel="noopener noreferrer" class="btn btn--outline donate-btn donate-btn--paypal">Donate via PayPal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="section section--alt xmas-faq xmas-only" id="faq" aria-labelledby="faq-heading">
+      <div class="container xmas-faq-inner">
+        <div class="section-header">
+          <p class="section-label xmas-label">Questions</p>
+          <h2 id="faq-heading" class="heading-md">Christmas Appeal FAQs</h2>
+        </div>
+
+        <div class="xmas-faq-list">
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">What can I donate?</summary>
+            <div class="xmas-faq-a">
+              <p>We're collecting new toys, gifts for teenagers, advent calendars and selection boxes.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">Do gifts need to be new?</summary>
+            <div class="xmas-faq-a">
+              <p>Yes, please. We can only accept new gifts in their original packaging, so every child gets something brand new to open on Christmas morning.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">Should I wrap my gift?</summary>
+            <div class="xmas-faq-a">
+              <p>Please leave gifts unwrapped. It means we can check them and match each one to the right child.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">What ages are you collecting for?</summary>
+            <div class="xmas-faq-a">
+              <p>We're collecting gifts for children and young people aged 0 to 18. Gifts for teenagers are especially welcome, as they're often the hardest to find.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">When is the last day to drop off?</summary>
+            <div class="xmas-faq-a">
+              <p>The last day for drop-offs is <strong>Friday 11 December</strong>. <a href="#drop-off">See where to drop off your gifts</a>.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">Can I donate money instead?</summary>
+            <div class="xmas-faq-a">
+              <p>Yes. You can donate via GoFundMe, PayPal or our Amazon Wishlist, or set up a monthly standing order. <a href="#donate">See all the ways to donate</a>.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">Can my business or school run a collection?</summary>
+            <div class="xmas-faq-a">
+              <p>We'd love that. <a href="/contact.html?type=donate">Get in touch</a> or call us on <a href="tel:07496381323">07496 381323</a> and we'll help you get set up.</p>
+            </div>
+          </details>
+
+          <details class="xmas-faq-item">
+            <summary class="xmas-faq-q">My family needs help this Christmas. What should I do?</summary>
+            <div class="xmas-faq-a">
+              <p>Please <a href="/contact.html?type=help">get in touch</a> or call us on <a href="tel:07496381323">07496 381323</a>. You can also visit any of our <a href="/find-a-site.html">food bank sites</a>, open 7 days a week with no referral needed.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPREAD THE WORD / FLYER
+         ============================================================ -->
+    <section class="section xmas-flyer xmas-only" aria-labelledby="flyer-heading">
+      <div class="container xmas-flyer-inner">
+        <div class="xmas-flyer-media">
+          <img src="assets/christmas-appeal/flyer-preview.webp" alt="Friends of Isaac's Christmas Appeal flyer" class="xmas-flyer-img" loading="lazy" />
+        </div>
+        <div class="xmas-flyer-text">
+          <p class="section-label xmas-label">Spread the word</p>
+          <h2 id="flyer-heading" class="heading-md">Help us reach every corner of Redditch</h2>
+          <p class="subheading">Download our flyer to print and pin up at work, school or your local shop, or share the appeal with friends online.</p>
+          <div class="xmas-flyer-actions">
+            <a href="assets/christmas-appeal/foi-christmas-appeal.pdf" download class="btn btn--xmas">Download flyer (PDF)</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fteamisaac.org.uk%2Fchristmas-appeal.html" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Share on Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main>
+
+
+  <!-- ============================================================
+       PRE-FOOTER CTA STRIPE
+       ============================================================ -->
+  <div class="prefooter-stripe">
+    <div class="container prefooter-inner">
+      <p class="prefooter-text">Need support or looking to donate? <a href="/contact.html" class="prefooter-link">Get in touch &rsaquo;</a></p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-tagline">Take it if you need it,<br />share if you have spare</p>
+        <p class="footer-cic">Community Interest Company No. 14711585</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/FriendsofIsaacsFoodBank" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link">
+            <img src="assets/facebook.svg" alt="Facebook" width="18" height="18" />
+          </a>
+          <a href="https://www.amazon.co.uk/hz/wishlist/ls/SWV1YE7PH01U?ref_=wl_share" target="_blank" rel="noopener noreferrer" aria-label="Amazon Wishlist" class="footer-social-link">
+            <img src="assets/amazon.avif" alt="Amazon Wishlist" width="18" height="18" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <p class="footer-nav-heading">Navigate</p>
+        <ul>
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/our-story.html" class="footer-link">Our Story</a></li>
+          <li><a href="/get-involved.html" class="footer-link">Get Involved</a></li>
+          <li><a href="/find-a-site.html" class="footer-link">Find a Site</a></li>
+          <li><a href="/contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-nav-heading">Get in Touch</p>
+        <ul>
+          <li><a href="mailto:friendsofisaacs@hotmail.com" class="footer-link">friendsofisaacs@hotmail.com</a></li>
+          <li><a href="tel:07496381323" class="footer-link">07496 381323</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-legal">
+      <div class="container footer-legal-inner">
+        <p>&copy; 2026 Friends of Isaac's Food Bank CIC. All rights reserved. &bull; Built by <a href="https://www.lemiyu.com" target="_blank" rel="noopener noreferrer" class="footer-legal-link">Lemiyu</a></p>
+        <ul class="footer-legal-links">
+          <li><a href="/privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/cookie-policy.html" class="footer-link">Cookie Policy</a></li>
+          <li><a href="/accessibility.html" class="footer-link">Accessibility</a></li>
+          <li><a href="/terms.html" class="footer-link">Terms of Use</a></li>
+          <li><a href="/safeguarding.html" class="footer-link">Safeguarding</a></li>
+          <li><a href="/complaints.html" class="footer-link">Complaints Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const nav = document.getElementById('header-nav');
+
+    function closeNav() {
+      nav.classList.remove('is-open');
+      hamburger.setAttribute('aria-expanded', false);
+      hamburger.setAttribute('aria-label', 'Open menu');
+      hamburgerIcon.src = 'assets/hamburger-menu.svg';
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      hamburgerIcon.src = isOpen ? 'assets/hamburger-close.svg' : 'assets/hamburger-menu.svg';
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !nav.contains(e.target)) closeNav();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        closeNav();
+        hamburger.focus();
+      }
+    });
+
+    // Sticky header shadow
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 10);
+    });
+  </script>
+
+
+
+  <script>
+    // Countdown — reads date and label from christmas.js CONFIG
+    (function () {
+      const season = window.FOI_SEASON;
+      const el = document.getElementById('xmas-countdown');
+      if (!season || !season.active || !el) return;
+
+      const cfg = season.config.countdown;
+      const p = cfg.to.split('-');
+      const target = new Date(+p[0], +p[1] - 1, +p[2] + 1); // midnight at the end of that day
+
+      document.getElementById('xmas-countdown-label').textContent = cfg.label;
+
+      const units = {
+        days:  el.querySelector('[data-unit="days"]'),
+        hours: el.querySelector('[data-unit="hours"]'),
+        mins:  el.querySelector('[data-unit="mins"]'),
+        secs:  el.querySelector('[data-unit="secs"]')
+      };
+      const pad = (n) => String(n).padStart(2, '0');
+
+      function tick() {
+        let diff = target - new Date();
+
+        if (diff <= 0) {
+          clearInterval(timer);
+          el.hidden = true;
+          document.getElementById('xmas-countdown-heading').hidden = true;
+          document.getElementById('xmas-countdown-done').hidden = false;
+          document.documentElement.classList.add('is-dropoff-closed');
+          return;
+        }
+
+        const days = Math.floor(diff / 86400000); diff %= 86400000;
+        const hours = Math.floor(diff / 3600000); diff %= 3600000;
+        const mins = Math.floor(diff / 60000);    diff %= 60000;
+        const secs = Math.floor(diff / 1000);
+
+        units.days.textContent  = days;
+        units.hours.textContent = pad(hours);
+        units.mins.textContent  = pad(mins);
+        units.secs.textContent  = pad(secs);
+
+        el.setAttribute('aria-label', days + ' days, ' + hours + ' hours and ' + mins + ' minutes to go');
+      }
+
+      const timer = setInterval(tick, 1000);
+      tick();
+    })();
+  </script>
+
+  <script>
+    // Bank detail copy buttons
+    document.querySelectorAll('.bank-copy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy');
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied';
+          btn.classList.add('is-copied');
+          setTimeout(function () {
+            btn.textContent = 'Copy';
+            btn.classList.remove('is-copied');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
+
+  <script>
+    // Sleigh-o-meter — reads numbers from christmas.js CONFIG
+    (function () {
+      const season = window.FOI_SEASON;
+      const el = document.getElementById('sleighometer');
+      if (!season || !season.active || !el) return;
+
+      const cfg = season.config.sleighometer;
+      const collected = Math.max(0, cfg.collected);
+      const target = Math.max(1, cfg.target);
+      const pct = Math.min(100, Math.round((collected / target) * 100));
+      const fmt = (n) => n.toLocaleString('en-GB');
+
+      const numEl = document.getElementById('sleigh-collected');
+      document.getElementById('sleigh-target').textContent = fmt(target);
+      document.getElementById('sleigh-target-text').textContent = fmt(target);
+      document.getElementById('sleigh-percent').textContent = pct + '%';
+
+      const track = el.querySelector('.xmas-sleigh-track');
+      track.setAttribute('aria-valuemax', target);
+      track.setAttribute('aria-valuenow', Math.min(collected, target));
+      track.setAttribute('aria-valuetext', fmt(collected) + ' of ' + fmt(target) + ' gifts collected');
+
+      if (cfg.updated) {
+        const p = cfg.updated.split('-');
+        const date = new Date(+p[0], +p[1] - 1, +p[2]);
+        const updated = document.getElementById('sleigh-updated');
+        updated.textContent = 'Updated ' + date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long' });
+        updated.hidden = false;
+      }
+
+      if (collected >= target) {
+        el.classList.add('is-complete');
+        document.getElementById('sleigh-complete').hidden = false;
+      }
+
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function run() {
+        el.style.setProperty('--progress', pct + '%');
+        if (reduce) {
+          numEl.textContent = fmt(collected);
+          return;
+        }
+        const start = performance.now();
+        const dur = 1600;
+        (function frame(now) {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          numEl.textContent = fmt(Math.round(collected * eased));
+          if (t < 1) requestAnimationFrame(frame);
+        })(start);
+      }
+
+      if (!reduce && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            run();
+            io.disconnect();
+          }
+        }, { threshold: 0.4 });
+        io.observe(el);
+      } else {
+        run();
+      }
+    })();
+  </script>
+
+
+</body>
+</html>

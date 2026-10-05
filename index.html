@@ -24,6 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="christmas.css" />
+  <script src="christmas.js"></script>
 </head>
 <body>
 
@@ -70,9 +72,29 @@
 
 
   <!-- ============================================================
+       HERO — CHRISTMAS (auto shows in season)
+       ============================================================ -->
+  <section class="hero hero--xmas xmas-only" aria-label="Christmas Appeal">
+    <div class="hero-media hero-media--xmas" role="img" aria-label="Isaac in a Santa hat, wrapped in Christmas lights and holding a toy reindeer">
+      <div class="hero-overlay hero-overlay--xmas" aria-hidden="true"></div>
+    </div>
+    <canvas class="xmas-snow" data-snow aria-hidden="true"></canvas>
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Christmas Toy Appeal 2026</p>
+      <h1 class="hero-headline">Help Every Child Feel Special This <span class="xmas-highlight">Christmas</span></h1>
+      <p class="hero-sub">New toys, gifts for teenagers, advent calendars and selection boxes for families across Redditch who'd otherwise go without.</p>
+      <div class="hero-actions">
+        <a href="/christmas-appeal.html" class="btn btn--xmas">Support the Appeal</a>
+        <a href="/contact.html?type=help" class="btn btn--secondary-yellow">Need Help?</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
        HERO
        ============================================================ -->
-  <section class="hero" aria-label="Hero">
+    <section class="hero xmas-hide" aria-label="Hero">
     <div class="hero-media">
       <picture>
         <source media="(max-width: 768px)" srcset="assets/home-page-hero-v1.webp" />

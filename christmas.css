@@ -1,0 +1,544 @@
+/* ============================================================
+   CHRISTMAS.CSS — Friends of Isaac's Food Bank CIC
+   Seasonal layer. Active only when <html data-season="christmas">
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. TOKENS
+   ------------------------------------------------------------ */
+:root {
+  --xmas-red:       #C8312B;
+  --xmas-red-dark:  #A02420;
+  --xmas-red-tint:  #FCECEA;
+  --xmas-green:     #1E5E3A;
+  --xmas-gold:      #F2C14E;
+  --xmas-cream:     #FFF8EC;
+  --xmas-overlay: 16 52 32;
+
+  --bulb-1: #6DBF8A;
+  --bulb-2: #F9E07F;
+  --bulb-3: #F4A96A;
+  --bulb-4: #FFFFFF;
+  --bulb-5: #8AB6F9;
+  --bulb-6: #C3A6F2;
+}
+
+/* ------------------------------------------------------------
+   2. SEASON SWITCHES
+   ------------------------------------------------------------ */
+html:not([data-season="christmas"]) .xmas-only { display: none !important; }
+html[data-season="christmas"] .xmas-hide       { display: none !important; }
+
+
+/* ------------------------------------------------------------
+   3. ANNOUNCEMENT BAR
+   ------------------------------------------------------------ */
+.xmas-bar {
+  position: relative;
+  background-color: var(--xmas-red);
+  color: var(--white);
+  padding-bottom: 16px; /* room for the lights */
+}
+
+.xmas-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+}
+
+/* Hidden for now
+.xmas-bar-sleeps {
+  flex-shrink: 0;
+  background-color: var(--xmas-gold);
+  color: var(--text-dark);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+*/
+
+.xmas-bar-sleeps { 
+    display: none;
+}
+
+.xmas-bar-text {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  line-height: var(--lh-base);
+}
+
+.xmas-bar-short { display: none; }
+
+.xmas-bar-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.xmas-bar-link:hover { text-decoration-thickness: 2px; }
+
+
+.xmas-bar-link:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* Fairy lights */
+.xmas-lights {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.xmas-lights::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3px;
+  height: 2px;
+  background-color: rgba(40, 10, 10, 0.45);
+}
+
+.xmas-bulb {
+  --bulb: var(--bulb-1);
+  position: relative;
+  width: 8px;
+  height: 11px;
+  margin-top: 5px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  background-color: var(--bulb);
+  box-shadow: 0 0 8px 2px var(--bulb);
+  animation: xmas-twinkle 2.4s ease-in-out infinite;
+}
+
+.xmas-bulb::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 1px;
+  background-color: #3A3A3A;
+}
+
+.xmas-bulb:nth-child(odd)   { margin-top: 7px; }
+.xmas-bulb:nth-child(6n+1)  { --bulb: var(--bulb-1); animation-delay: 0s; }
+.xmas-bulb:nth-child(6n+2)  { --bulb: var(--bulb-2); animation-delay: 0.4s; }
+.xmas-bulb:nth-child(6n+3)  { --bulb: var(--bulb-3); animation-delay: 0.8s; }
+.xmas-bulb:nth-child(6n+4)  { --bulb: var(--bulb-4); animation-delay: 1.2s; }
+.xmas-bulb:nth-child(6n+5)  { --bulb: var(--bulb-5); animation-delay: 1.6s; }
+.xmas-bulb:nth-child(6n+6)  { --bulb: var(--bulb-6); animation-delay: 2s; }
+
+@keyframes xmas-twinkle {
+  0%, 100% { opacity: 1;    box-shadow: 0 0 8px 2px var(--bulb); }
+  50%      { opacity: 0.45; box-shadow: 0 0 2px 0 var(--bulb); }
+}
+
+@media (max-width: 768px) {
+  .xmas-bar-long  { display: none; }
+  .xmas-bar-short { display: inline; }
+  .xmas-bar-sleeps { display: none;}
+}
+
+@media (max-width: 560px) {
+  .xmas-bulb:nth-child(even) { display: none; }
+}
+
+
+/* ------------------------------------------------------------
+   4. NAV LINK
+   ------------------------------------------------------------ */
+.nav-link--xmas {
+  color: var(--xmas-red);
+}
+
+.nav-link--xmas:hover,
+.nav-link--xmas.nav-link--active {
+  background-color: var(--xmas-red-tint);
+  color: var(--xmas-red-dark);
+}
+
+/* Six links: stop wrapping, tighten spacing */
+html[data-season="christmas"] .nav-link {
+  white-space: nowrap;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 999px) {
+  html[data-season="christmas"] .nav-link {
+    padding: 12px 16px;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   5. BUTTONS
+   ------------------------------------------------------------ */
+.btn--xmas {
+  background-color: var(--xmas-red);
+  color: var(--white);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.btn--xmas:hover { background-color: var(--xmas-red-dark); }
+
+
+/* ------------------------------------------------------------
+   6. SNOW
+   ------------------------------------------------------------ */
+.xmas-snow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.xmas-snow--page {
+  position: fixed;
+  z-index: 90; /* below sticky header (100) */
+}
+
+/* ------------------------------------------------------------
+   7. HOMEPAGE HERO — CHRISTMAS
+   ------------------------------------------------------------ */
+.hero--xmas { overflow: hidden; }
+
+/* Background only loads in season */
+html[data-season="christmas"] .hero-media--xmas {
+  background-image: url('assets/christmas-appeal/christmas-isaac-2.webp');
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+}
+
+/* Full-image tint + stronger on the text side */
+.hero-overlay--xmas {
+  background:
+    linear-gradient(
+      to right,
+      rgb(var(--xmas-overlay) / 0.70) 0%,
+      rgb(var(--xmas-overlay) / 0.45) 50%,
+      rgb(var(--xmas-overlay) / 0.15) 100%
+    ),
+    rgb(var(--xmas-overlay) / 0.35);
+}
+
+.hero--xmas .hero-content { z-index: 2; }
+
+.hero--xmas .hero-eyebrow { color: var(--xmas-gold); }
+
+.hero--xmas .hero-headline {
+  font-size: 3.5rem;
+  max-width: 800px;
+}
+
+.hero--xmas .hero-sub { max-width: 800px; }
+
+.hero--xmas .hero-actions .btn { min-width: 220px; }
+
+.xmas-highlight { color: var(--xmas-gold); }
+
+@media (max-width: 1100px) {
+  .hero--xmas .hero-headline { font-size: var(--fs-4xl); }
+}
+
+@media (max-width: 768px) {
+  html[data-season="christmas"] .hero-media--xmas {
+    background-position: 60% 20%;
+  }
+  .hero-overlay--xmas {
+    background: rgb(var(--xmas-overlay) / 0.72);
+  }
+  .hero--xmas .hero-headline { font-size: var(--fs-3xl); }
+}
+
+
+
+/* ------------------------------------------------------------
+   8. REDUCED MOTION
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .xmas-tag,
+  .xmas-need-tag,
+  .xmas-sleigh-icon {
+    animation: none;
+  }
+  .xmas-sleigh-fill,
+  .xmas-sleigh-icon {
+    transition: none;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   5. SHARED SECTION BITS
+   ------------------------------------------------------------ */
+.xmas-label {
+  color: var(--xmas-red-dark);
+}
+
+.xmas-section-sub {
+  max-width: 600px;
+  margin: 12px auto 0;
+}
+
+
+/* ------------------------------------------------------------
+   6. WHAT WE NEED — HANGING TAGS
+   ------------------------------------------------------------ */
+.xmas-needs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.xmas-need {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+/* The line — each tag carries its own segment so rows stay joined */
+.xmas-need::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -12px;
+  right: -12px;
+  height: 2px;
+  background-color: var(--xmas-gold);
+}
+
+.xmas-need-string {
+  position: relative;
+  z-index: 1;
+  width: 2px;
+  height: 40px;
+  margin-bottom: -22px;
+  background-color: var(--xmas-gold);
+}
+
+.xmas-need-tag {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  padding: 44px 24px 28px;
+  text-align: center;
+  background-color: var(--xmas-cream);
+  border-radius: 8px;
+  clip-path: polygon(22% 0, 78% 0, 100% 12%, 100% 100%, 0 100%, 0 12%);
+  box-shadow: var(--shadow-md);
+  transform-origin: top center;
+  animation: xmas-need-swing 6s ease-in-out infinite;
+}
+
+.xmas-need:nth-child(2) .xmas-need-tag { animation-delay: -1.5s; }
+.xmas-need:nth-child(3) .xmas-need-tag { animation-delay: -3s; }
+.xmas-need:nth-child(4) .xmas-need-tag { animation-delay: -4.5s; }
+
+.xmas-need-hole {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.xmas-need-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: var(--xmas-red);
+}
+
+.xmas-need:nth-child(even) .xmas-need-icon {
+  color: var(--primary);
+}
+
+.xmas-need-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-extrabold);
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.xmas-need-text {
+  font-size: var(--fs-sm);
+  color: var(--text-mid);
+  line-height: var(--lh-relaxed);
+}
+
+@keyframes xmas-need-swing {
+  0%, 100% { transform: rotate(1.5deg); }
+  50%      { transform: rotate(-1.5deg); }
+}
+
+@media (max-width: 900px) {
+  .xmas-needs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .xmas-needs-grid { grid-template-columns: 1fr; }
+  .xmas-need::before { left: 0; right: 0; }
+  .xmas-need-tag { max-width: 300px; }
+}
+
+
+/* ------------------------------------------------------------
+   7. DROP-OFF POINTS
+   ------------------------------------------------------------ */
+
+
+
+.xmas-dropoff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
+  justify-content: center;
+  gap: 24px;
+}
+
+
+/* Hidden for now
+.xmas-dropoff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+*/
+
+.xmas-dropoff-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 28px;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  border-top: 6px solid var(--xmas-red);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.xmas-dropoff-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.xmas-dropoff-tag {
+  align-self: flex-start;
+  background-color: var(--xmas-red);
+  color: var(--white);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.xmas-dropoff-name {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--text-dark);
+  line-height: var(--lh-tight);
+}
+
+.xmas-dropoff-address {
+  font-style: normal;
+  font-size: var(--fs-base);
+  color: var(--text-mid);
+  line-height: var(--lh-relaxed);
+}
+
+.xmas-dropoff-postcode {
+  font-weight: var(--fw-extrabold);
+  color: var(--xmas-red-dark);
+}
+
+.xmas-dropoff-meta {
+  padding: 14px 16px;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--xmas-gold);
+  flex: 1;
+}
+
+.xmas-dropoff-row dt {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.xmas-dropoff-row dd {
+  font-size: var(--fs-sm);
+  color: var(--text-mid);
+}
+
+.xmas-dropoff-row + .xmas-dropoff-row {
+  margin-top: 10px;
+}
+
+.xmas-dropoff-btn {
+  align-self: flex-start;
+}
+
+.xmas-dropoff-note {
+  margin-top: 40px;
+  text-align: center;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-dark);
+}
+
+.xmas-dropoff-note a {
+  color: var(--xmas-red-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.xmas-dropoff-note a:hover {
+  color: var(--xmas-red);
+}
+
+@media (max-width: 900px) {
+  .xmas-dropoff-grid { grid-template-columns: 1fr; }
+  .xmas-dropoff-btn { align-self: stretch; }
+}
+
+/* Hidden for now as 1 drop off 
+@media (max-width: 900px) {
+  .xmas-dropoff-grid { grid-template-columns: 1fr; }
+  .xmas-dropoff-btn { align-self: stretch; }
+}
+*/
+

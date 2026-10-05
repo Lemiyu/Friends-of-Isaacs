@@ -1,0 +1,680 @@
+/* ============================================================
+   CHRISTMAS-APPEAL.CSS — Friends of Isaac's Food Bank CIC
+   Christmas Appeal page. Relies on tokens in christmas.css
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. CLOSED MESSAGE
+   ------------------------------------------------------------ */
+.xmas-closed-inner {
+  max-width: 720px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.xmas-closed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+
+
+
+/* ------------------------------------------------------------
+   2. HERO
+   ------------------------------------------------------------ */
+.xmas-page-hero {
+  --hero-tint: 120 22 26;   /* deep cranberry, RGB no commas */
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+}
+
+/* Background only loads in season (section is hidden otherwise) */
+.xmas-page-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('assets/christmas-appeal/christmas-toys-warehouse.webp');
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+}
+
+.xmas-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgb(var(--hero-tint) / 0.85) 0%,
+      rgb(var(--hero-tint) / 0.65) 50%,
+      rgb(var(--hero-tint) / 0.35) 100%
+    ),
+    rgb(var(--hero-tint) / 0.30);
+}
+
+.xmas-page-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding-top: var(--padding-y);
+  padding-bottom: var(--padding-y);
+}
+
+.xmas-page-hero .hero-eyebrow {
+  color: var(--xmas-gold);
+}
+
+.xmas-page-hero-headline {
+  font-size: 3.5rem;
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.xmas-page-hero-sub {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-relaxed);
+  color: rgba(255,255,255,0.88);
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+
+.xmas-page-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.xmas-page-hero-actions .btn {
+  min-width: 220px;
+}
+
+/* White button — reads on the red overlay */
+.btn--xmas-light {
+  background-color: var(--white);
+  color: var(--xmas-red-dark);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.btn--xmas-light:hover {
+  background-color: var(--xmas-cream);
+}
+
+/* Anchor targets clear the sticky header */
+#donate,
+#drop-off {
+  scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+@media (max-width: 1100px) {
+  .xmas-page-hero-headline { font-size: var(--fs-4xl); }
+}
+
+@media (max-width: 900px) {
+  .xmas-page-hero-inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .xmas-page-hero { min-height: 0; }
+
+  .xmas-page-hero-overlay {
+    background: rgb(var(--hero-tint) / 0.80);
+  }
+
+  .xmas-page-hero-inner {
+    padding-top: var(--padding-y-mob);
+    padding-bottom: var(--padding-y-mob);
+  }
+
+  .xmas-page-hero-headline { font-size: var(--fs-3xl); }
+
+  .xmas-page-hero-sub { font-size: var(--fs-base); }
+}
+
+@media (max-width: 480px) {
+  .xmas-page-hero-actions { flex-direction: column; }
+  .xmas-page-hero-actions .btn { width: 100%; }
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------
+   3. HANGING GIFT TAG (desktop only)
+   ------------------------------------------------------------ */
+.xmas-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: start;
+  margin-top: calc(var(--padding-y) * -1);
+  transform-origin: top center;
+  animation: xmas-swing 4s ease-in-out infinite;
+}
+
+.xmas-tag-string {
+  position: relative;
+  z-index: 1;
+  width: 2px;
+  height: 110px;
+  margin-bottom: -24px;
+  background-color: var(--xmas-gold);
+}
+
+.xmas-tag-card {
+  position: relative;
+  width: 240px;
+  padding: 48px 28px 32px;
+  background-color: var(--xmas-cream);
+  color: var(--text-dark);
+  border-radius: 8px;
+  clip-path: polygon(22% 0, 78% 0, 100% 14%, 100% 100%, 0 100%, 0 14%);
+  box-shadow: var(--shadow-lg);
+  transform: rotate(-4deg);
+}
+
+.xmas-tag-hole {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 50%;
+    background-color: rgb(var(--hero-tint));
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.xmas-tag-line {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  padding: 12px 0;
+}
+
+.xmas-tag-line + .xmas-tag-line {
+  border-top: 2px dashed rgba(0,0,0,0.12);
+}
+
+.xmas-tag-key {
+  display: block;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--xmas-red);
+  margin-bottom: 4px;
+}
+
+@keyframes xmas-swing {
+  0%, 100% { transform: rotate(3deg); }
+  50%      { transform: rotate(-3deg); }
+}
+
+@media (max-width: 900px) {
+  .xmas-tag { display: none; }
+}
+
+
+/* ------------------------------------------------------------
+   4. MINI COUNTDOWN (in hero)
+   ------------------------------------------------------------ */
+.xmas-mini-countdown {
+  margin-bottom: 32px;
+}
+
+.xmas-mini-countdown-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 18px;
+}
+
+.xmas-mini-countdown-grid {
+  display: flex;
+  gap: 12px;
+}
+
+.xmas-mini-countdown-grid[hidden],
+.xmas-mini-countdown-label[hidden] {
+  display: none;
+}
+
+/* Mini gift box */
+.xmas-mini-count {
+  position: relative;
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 4px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  background:
+    linear-gradient(90deg, transparent 43%, var(--xmas-red-tint) 43%, var(--xmas-red-tint) 57%, transparent 57%),
+    var(--white);
+}
+
+/* Bow */
+.xmas-mini-count::before,
+.xmas-mini-count::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 14px;
+  height: 10px;
+  border: 3px solid var(--xmas-gold);
+  border-radius: 50%;
+}
+
+.xmas-mini-count::before { transform: translateX(-100%) rotate(-25deg); }
+.xmas-mini-count::after  { transform: rotate(25deg); }
+
+.xmas-mini-count-num {
+  position: relative;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  line-height: 1;
+  color: var(--xmas-red-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.xmas-mini-count-label {
+  position: relative;
+  margin-top: 4px;
+  font-size: 0.625rem;
+  font-weight: var(--fw-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-mid);
+}
+
+.xmas-mini-countdown-done {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+}
+
+@media (max-width: 480px) {
+  .xmas-mini-countdown-grid { gap: 8px; }
+  .xmas-mini-count { flex: 1; width: auto; }
+}
+
+.xmas-mini-countdown-done a {
+  color: var(--xmas-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Hidden once the last drop-off day has passed */
+html.is-dropoff-closed .xmas-dropoff-open-only {
+  display: none !important;
+}
+
+
+/* ------------------------------------------------------------
+   REDUCED MOTION
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .xmas-tag,
+  .xmas-need-tag,
+  .xmas-sleigh-icon {
+    animation: none;
+  }
+  .xmas-sleigh-fill,
+  .xmas-sleigh-icon {
+    transition: none;
+  }
+}
+
+
+
+/* ------------------------------------------------------------
+   8. DONATE STRIP — page override (avoids two green tints touching)
+   ------------------------------------------------------------ */
+.donate-strip.xmas-only {
+  background-color: var(--bg-light);
+}
+
+
+/* ------------------------------------------------------------
+   9. SLEIGH-O-METER (condensed band)
+   ------------------------------------------------------------ */
+.xmas-sleigh {
+  background-color: var(--xmas-green);
+  color: var(--white);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.xmas-sleigh-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.xmas-sleigh-label {
+  color: var(--xmas-gold);
+  margin-bottom: 4px;
+}
+
+.xmas-sleigh-heading {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+}
+
+.xmas-sleigh-sub {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,0.8);
+}
+
+.xmas-sleigh-meter {
+  --progress: 0%;
+  width: 100%;
+}
+
+.xmas-sleigh-stats {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.xmas-sleigh-count {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+}
+
+.xmas-sleigh-num {
+  display: inline-block;
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  line-height: 1;
+  color: var(--xmas-gold);
+  margin-right: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.xmas-sleigh-goal {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: rgba(255,255,255,0.8);
+}
+
+.xmas-sleigh-rail {
+  position: relative;
+  margin-top: 36px;
+}
+
+.xmas-sleigh-icon {
+  position: absolute;
+  bottom: calc(100% - 2px);
+  left: clamp(0px, calc(var(--progress) - 24px), calc(100% - 48px));
+  width: 48px;
+  height: 30px;
+  transition: left 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: xmas-sleigh-bob 1.2s ease-in-out infinite;
+}
+
+.xmas-sleigh-track {
+  height: 18px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255,255,255,0.15);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+/* Candy cane fill */
+.xmas-sleigh-fill {
+  height: 100%;
+  width: var(--progress);
+  border-radius: var(--radius-full);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--xmas-red) 0 10px,
+    var(--white) 10px 20px
+  );
+  transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.xmas-sleigh-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.xmas-sleigh-updated {
+  font-size: var(--fs-xs);
+  color: rgba(255,255,255,0.6);
+}
+
+.xmas-sleigh-link {
+  margin-left: auto;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-extrabold);
+  color: var(--xmas-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.xmas-sleigh-link:hover { color: var(--white); }
+
+.xmas-sleigh-link:focus-visible {
+  outline: 2px solid var(--xmas-gold);
+  outline-offset: 2px;
+}
+
+.xmas-sleigh-complete {
+  margin-top: 10px;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-extrabold);
+  color: var(--xmas-gold);
+}
+
+@keyframes xmas-sleigh-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-2px); }
+}
+
+@media (max-width: 900px) {
+  .xmas-sleigh-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .xmas-sleigh {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+}
+
+
+
+/* ------------------------------------------------------------
+   10. FAQ
+   ------------------------------------------------------------ */
+
+.xmas-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.xmas-faq-item {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid transparent;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.xmas-faq-item[open] {
+  border-left-color: var(--xmas-red);
+  box-shadow: var(--shadow-md);
+}
+
+.xmas-faq-q {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 64px 20px 24px;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-extrabold);
+  color: var(--text-dark);
+}
+
+.xmas-faq-q::-webkit-details-marker { display: none; }
+
+/* Plus / minus */
+.xmas-faq-q::before,
+.xmas-faq-q::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: 16px;
+  height: 2px;
+  margin-top: -1px;
+  background-color: var(--xmas-red);
+  transition: transform var(--transition);
+}
+
+.xmas-faq-q::after { transform: rotate(90deg); }
+
+.xmas-faq-item[open] .xmas-faq-q::after { transform: rotate(0deg); }
+
+.xmas-faq-q:focus-visible {
+  outline: 2px solid var(--xmas-red);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
+.xmas-faq-a {
+  padding: 0 24px 22px;
+}
+
+.xmas-faq-a p {
+  font-size: var(--fs-base);
+  color: var(--text-mid);
+  line-height: var(--lh-relaxed);
+}
+
+.xmas-faq-a a {
+  color: var(--xmas-red-dark);
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.xmas-faq-a a:hover { color: var(--xmas-red); }
+
+@media (max-width: 560px) {
+  .xmas-faq-q {
+    padding: 18px 52px 18px 18px;
+    font-size: var(--fs-base);
+  }
+  .xmas-faq-q::before,
+  .xmas-faq-q::after { right: 18px; }
+  .xmas-faq-a { padding: 0 18px 18px; }
+}
+
+
+/* ------------------------------------------------------------
+   11. SPREAD THE WORD / FLYER
+   ------------------------------------------------------------ */
+.xmas-flyer-inner {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.xmas-flyer-media {
+  position: relative;
+  transform: rotate(-3deg);
+}
+
+.xmas-flyer-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.414;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--white);
+}
+
+/* Tape */
+.xmas-flyer-media::before,
+.xmas-flyer-media::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -12px;
+  width: 90px;
+  height: 26px;
+  background-color: rgba(249, 224, 127, 0.75);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.xmas-flyer-media::before { left: 12px;  transform: rotate(-8deg); }
+.xmas-flyer-media::after  { right: 12px; transform: rotate(8deg); }
+
+.xmas-flyer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.xmas-flyer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .xmas-flyer-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .xmas-flyer-media {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .xmas-flyer-actions { flex-direction: column; width: 100%; }
+  .xmas-flyer-actions .btn { width: 100%; }
+}

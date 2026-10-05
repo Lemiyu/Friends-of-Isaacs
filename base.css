@@ -28,7 +28,7 @@
   --fs-xs:          0.75rem;    /* 12px */
   --fs-sm:          0.875rem;   /* 14px */
   --fs-base:        1rem;       /* 16px */
-  --fs-md:          1.125rem;   /* 18px */
+  --fs-md:          1.10rem;   /* 18px */
   --fs-lg:          1.25rem;    /* 20px */
   --fs-xl:          1.5rem;     /* 24px */
   --fs-2xl:         2rem;       /* 32px */
@@ -41,8 +41,8 @@
 
   /* Layout */
   --max-width:      1200px;
-  --padding-x:      32px;
-  --padding-x-mob:  16px;
+  --padding-x:      16px;
+  --padding-x-mob:  8px;
   --padding-y:      64px;
   --padding-y-mob:  32px;
 
@@ -332,8 +332,9 @@ button {
 }
 
 .header-logo img {
-  height: 32px;
+  height: auto;
   width: auto;
+  max-height: 32px;
 }
 
 /* Nav */

@@ -3052,3 +3052,12 @@ button {
 }
 
 
+
+/* Christmas Elf Campaign */
+.foi-elf {
+  position: absolute;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+}
